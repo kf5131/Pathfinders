@@ -20,6 +20,6 @@ class Presenter():
         print(self.model.get_data())
         
     def run(self):
-        self.view.init_ui(self)
-        self.update_something()
-        self.view.mainloop()
+        self.view.init_ui(self) # from Protocol
+        self.update_something() # child class method
+        self.view.mainloop() # from Protocol
