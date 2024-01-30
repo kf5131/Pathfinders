@@ -10,6 +10,13 @@ class View(Protocol):
         
     def update_view(self) -> None:
         ...
+    
+    @property
+    def selected_algo(self) -> str:    
+        ...
+    
+    def mainloop(self) -> None:
+        ...
 
 class Presenter():
     def __init__(self, model: Model, view: View):
@@ -22,5 +29,5 @@ class Presenter():
         
     def run(self) -> None:
         self.view.init_ui(self)
-        self.update_view()
+        #self.update_view()
         self.view.mainloop()
